@@ -21,3 +21,6 @@ gh-ssh-add:
 
 agent-add:
 	ssh-add -s /usr/lib/pkcs11/libtpm2_pkcs11.so 
+
+luks-tpm:
+	sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 /dev/${VOLUME} --tpm2-with-pin=yes
